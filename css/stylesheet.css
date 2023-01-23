@@ -1,0 +1,383 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+body {
+    background-color: black;
+}
+.hide {
+    display: none;
+}
+nav {
+    position: fixed;
+    width: 10%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    justify-content: space-evenly;
+}
+nav img:hover{
+    border-radius: 30px;
+    border: 2px solid pink;
+    -webkit-box-shadow: 3px 3px 22px 9px rgba(255,192,203,0.64); 
+    box-shadow: 3px 3px 22px 9px rgba(255,192,203,0.64);
+}
+.buttons_contact {
+    position: fixed;
+    margin-left: 94%;
+    background-color: black;
+    padding-right:2%;
+    width: 5%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.btnF{
+    background-color: black;
+}
+.btnF:hover{
+    border-radius: 10px;
+    border: 2px solid pink;
+    -webkit-box-shadow: 3px 3px 22px 9px rgba(255,192,203,0.64); 
+    box-shadow: 3px 3px 22px 9px rgba(255,192,203,0.64);
+}
+i {
+    background-color: black;
+    color: pink;
+    border-radius: 20px;
+}
+
+.eyecatch{
+    background-color: black;
+    height:10%;
+    width: 80%;
+    margin-left:10%;
+    display: flex;
+   align-content: center;
+    padding:2%;
+    justify-content: space-evenly;
+    color: pink;
+    font-size: larger;
+    position: fixed;
+    /*i want this to be full pade until bottom is clicked then animated to this setting*/
+}
+.about {
+    height: 100vh;
+    margin:0% 5% 0% 10%;
+    padding:15% 5%;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    color:pink;
+}
+.bio {
+    width: 60%;
+    letter-spacing: 0.2rem;
+    font-size: larger;
+    line-height: 1.5rem;
+    text-align: center;
+}
+.me img{
+    border-radius: 20%;
+    border: pink double 6px;
+}
+
+
+/*about,skills and projects should be animated in when as are clicked in the menu*/
+#my-work{
+    height: 100vh;
+    margin:0% 5% 0% 10%;
+    padding-top:10%;
+    background-color: black;
+    color: pink;
+}
+#skills{
+    height: 100vh;
+    margin:0% 5% 0% 10%;
+    padding-top:10%;
+    background-color: black;
+    color: pink;
+}
+.myWork{
+    z-index: -4;
+    padding: 10% 5%;
+    position: fixed; 
+   width: 90%;
+    height: 60vh;
+    margin:0% 5% 0% 10%;
+    padding:5%;
+}
+.fade-in {
+    margin-top: -100%;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: aqua;
+    z-index: 10;
+    
+}
+
+.work img{
+    border-radius: 20px;
+    filter: brightness(60%);
+    
+}
+
+.work img:hover {
+    filter: brightness(100%);
+}
+.myWorkGrid{
+    display: grid;
+    overflow: auto;
+   padding: 2%;
+    width: 100%;
+    height: 75vh;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 15%;
+    grid-template-areas: 'one one'
+                        'two three'
+                        'four four';
+
+}
+.myWorkGrid::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    background-color: black;
+  }
+.myWorkGrid::-webkit-scrollbar-thumb {
+    background: pink;
+  }
+ .work{
+    border-radius: 30px;
+ } 
+#one{
+    opacity: 0.5;
+    grid-area: one;
+    border-top: 4px solid pink;
+    border-right: 4px solid pink;
+    border-left: 4px solid pink;
+
+}
+#two{
+    grid-area: two;
+    border-bottom: 4px solid pink;
+    border-left: 4px solid pink;
+}
+#three {
+    grid-area: three;
+    border-bottom: 4px solid pink;
+    border-right: 4px solid pink;
+}
+#four{
+    grid-area:four;
+    border-bottom: 4px solid pink;
+    border-right: 4px solid pink;
+    border-left: 4px solid pink;
+}
+
+
+
+
+
+/*skills card starting*/
+.visibleSkills{
+    z-index: -4;
+    padding: 10% 5%;
+    position: fixed; 
+   width: 90%;
+    height: 60vh;
+    margin:0% 5% 0% 10%;
+    padding:5%;
+ 
+}
+.mySkills{
+    position: fixed;
+    overflow: scroll;
+    display: inline-flex;
+    flex-wrap: wrap;
+    padding: 5%;
+    overflow: auto;
+   padding: 2%;
+    width: 80%;
+    height: 75vh;
+    
+}
+.mySkills::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    background-color: black;
+  }
+.mySkills::-webkit-scrollbar-thumb {
+    background: pink;
+  }
+
+.skill{
+    background-color: pink;
+    height: 400px;
+    width: 30%;
+    margin-right:2%;
+    border: pink solid 2px;
+    margin-top:5%;
+    border-radius: 30px;
+
+}
+/*card attemtp*/
+.inner-card {
+    width: 100%;
+    height:100%;
+    transition: transform 2s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+    border: 2px pink solid;
+    border-radius: 30px;
+}
+.inner-card.isFlipped {
+    transform: rotateX(180deg);
+}
+.cardFace {
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 30px;
+    box-shadow: 0px 3px 18px 3px rgba(255,192,203,0.2);
+}
+.cardFront {
+    background-color: black;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.cardBack{
+    background-color: rgba(0, 0, 0, 0.315);
+    color: black;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: rotateX(180deg);
+}
+footer{
+    display: none;
+}
+/*END OF CSS FOR FLIPPING SKILL CARDS ALLHAMDULLILAH*/
+/*MEDIA QUERRIES        */
+@media screen and (max-width:900px ) {
+    .eyecatch{
+        display:none;
+    }
+    nav {
+        height:10%;
+        width: 100%;
+        margin-left:0%;
+        display: flex;
+        flex-direction: row;;
+  
+    }
+    nav img {
+        width:20%;
+    }
+    .about {
+        width:90%;
+        margin:15% 0% ;
+        background-color: black;
+        display: flex;
+        flex-direction:column-reverse;
+        overflow-y: scroll;
+    }
+    .about::-webkit-scrollbar {
+        width: 5px;
+        height: 8px;
+        background-color: black;
+      }
+    .about::-webkit-scrollbar-thumb {
+        background: pink;
+      }
+      .bio{
+        align-self: center;
+      }
+      .me{
+        align-self:center;
+        margin-bottom:5%;
+        margin-top: 10%;
+      }
+
+    #skills{
+        width: 100vw;
+        height: 100vh;
+        margin:0% 0% 0% 0%;
+        padding:10% 10%;
+    }
+    .skill{
+        width: 40%;
+    }
+    #my-work{
+        width: 100vw;
+        height: 100vh;
+        margin:0% 0% 0% 0%;
+        padding:10% 10%;
+    }
+}
+@media screen and (max-width:570px ){
+    nav{
+        width: 100%;
+    }
+    .about {
+        width:100%;
+        margin: 0% ;
+        padding-top:20%;
+        background-color: black;
+        display: flex;
+        flex-direction:column-reverse;
+        justify-content: space-between;
+        color:pink;
+        overflow: scroll;
+    }
+ 
+    .bio {
+        width: 100%;}
+    #skills{
+        margin-top:10%;
+        height:80%;
+    }
+    #my-work{
+        margin-top:10%;
+        width: 100vw;
+        height: 70%;
+      }
+      .myWorkGrid{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        gap: 5%;
+        grid-template-areas: 'one one'
+                            'two two'
+                            'three three'
+                            'four four';
+    
+    }
+    .skill{
+        margin-top:10%;
+        height: 300px;
+        width: 100%;
+    }
+    .buttons_contact{
+        display:none;
+    }
+    footer{
+        background-color: black;
+        height: 5%;
+        width:100%; 
+        position: fixed;
+       bottom: 0px;
+        display: flex;
+        color: pink;
+        justify-content: space-evenly;
+    }
+
+}
