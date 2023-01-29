@@ -6,6 +6,12 @@
 body {
     background-color: black;
 }
+p{
+    font-family: 'Alegreya Sans', sans-serif;
+}
+h1,h2,h3,h4,h5 {
+    font-family: 'Merriweather Sans', sans-serif;
+}
 .hide {
     display: none;
 }
@@ -73,14 +79,51 @@ i {
     justify-content: space-between;
     color:pink;
 }
+.btn {
+    padding: 3% 5%;
+    border-radius: 20px;
+    margin:5%; 
+    color: black;
+    text-decoration: none;
+    background-color: pink;
+    border: 3px double black;
+}
+.btn a{
+    font-family: 'Merriweather Sans', sans-serif;
+    color: black;
+    text-decoration: none;
+    font-size: xx-large;
+    font-weight: bolder;
+    -webkit-text-stroke:0.5px pink;
+}
+.btn:hover{
+    color: pink;
+    text-decoration: none;
+    background-color: black;
+    border: 3px double pink;
+}
+.btn a:hover{
+    color:pink;
+}
+
 .bio {
     width: 60%;
     letter-spacing: 0.2rem;
     font-size: larger;
     line-height: 1.5rem;
     text-align: center;
+    
+}
+.bio h2 {
+    font-size: xx-large;
+    margin-bottom: 5%;
+}
+.bio h3{
+    margin-bottom: 3%;
+    color: rgba(255,192,203,0.64);
 }
 .me img{
+    margin-left:-10%;
     border-radius: 20%;
     border: pink double 6px;
 }
@@ -137,7 +180,7 @@ i {
     height: 75vh;
     grid-template-columns: 1fr 1fr ;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    gap: 15%;
+    gap: 5%;
     grid-template-areas: 'one one'
                         'two three'
                         'four four';
@@ -155,11 +198,15 @@ i {
     border-radius: 30px;
  } 
 #one{
-    opacity: 0.5;
     grid-area: one;
-    border-top: 4px solid pink;
+    border-bottom: 4px solid pink;
     border-right: 4px solid pink;
     border-left: 4px solid pink;
+    display: flex;
+}
+.work-card-style{
+    text-align:center;
+    padding:5%
 
 }
 #two{
@@ -169,12 +216,13 @@ i {
 }
 #three {
     grid-area: three;
-    border-bottom: 4px solid pink;
+    border-top: 4px solid pink;
     border-right: 4px solid pink;
 }
 #four{
+    display: flex;
     grid-area:four;
-    border-bottom: 4px solid pink;
+    border-top: 4px solid pink;
     border-right: 4px solid pink;
     border-left: 4px solid pink;
 }
@@ -284,20 +332,21 @@ footer{
         width:20%;
     }
     .about {
-        width:90%;
-        margin:15% 0% ;
+        width:80%;
         background-color: black;
         display: flex;
         flex-direction:column-reverse;
-        overflow-y: scroll;
+        overflow-y: scroll;    width: 100vw;
+        height: 100vh;
+        margin:0%;
+        margin-right: 10%;
+        padding:10% 0%;
     }
     .about::-webkit-scrollbar {
-        width: 5px;
-        height: 8px;
-        background-color: black;
+        background-color:rgba(0, 0,0,0);
       }
     .about::-webkit-scrollbar-thumb {
-        background: pink;
+        background: rgba(0,0,0,0);
       }
       .bio{
         align-self: center;
@@ -320,7 +369,7 @@ footer{
     #my-work{
         width: 100vw;
         height: 100vh;
-        margin:0% 0% 0% 0%;
+        margin:5% 0%;
         padding:10% 10%;
     }
 }
